@@ -9,10 +9,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-20.04]
+        os: [ubuntu-latest]
 
     steps:
-    - uses: actions/checkout@v4.1.5
+    - uses: actions/checkout@v5
     - name: Installing JDK 7 + Build Dependencies
       run: |
         sudo apt-get update
@@ -31,7 +31,7 @@ jobs:
         python3 ~/.bin/repo init --depth=1 -u https://github.com/unlegacy-devices/fox-7.1_manifest -b twrp-7.1
         git clone --branch twrp-6.0 --single-branch https://github.com/NotNoelChannel/twrp_device_samsung_j3xnlte.git ~/OFRP/device/samsung/j3xlte
         python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
-    - name: Building OFRP
+    - name: Building OrangeFox
       run: |
         OLDPATH=$PATH
         OLDJAVAHOME=$JAVA_HOME
@@ -59,7 +59,7 @@ jobs:
         export PATH=$OLDPATH
         export JAVA_HOME=$OLDJAVAHOME
     - name: Uploading OFRP builds
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v6
       with:
         name: ofrp
         path: | 

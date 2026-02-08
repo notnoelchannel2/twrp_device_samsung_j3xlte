@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Installing JDK 7 + Build Dependencies
       run: |
         sudo dpkg --add-architecture i386
@@ -41,7 +41,7 @@ jobs:
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
         python3 ~/.bin/repo init --depth=1 -u https://github.com/NotNoelChannel/platform_manifest_twrp_omni.git -b patch-1
         sudo git clone --depth 1 --branch android-6.0.1_r61 --single-branch https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8 /opt/toolchains/arm-eabi-4.8/
-        git clone --branch twrp-6.0 --single-branch https://github.com/NotNoelChannel/twrp_device_samsung_j3xnlte.git ~/TWRP/device/samsung/j3xlte
+        git clone --branch twrp-6.0 --single-branch https://github.com/notnoelchannel2/twrp_device_samsung_j3xlte.git ~/TWRP/device/samsung/j3xlte
         python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
     - name: Building TWRP
       run: |
@@ -59,7 +59,7 @@ jobs:
         export PATH=$OLDPATH
         export JAVA_HOME=$OLDJAVAHOME
     - name: Uploading TWRP builds
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: twrp
         path: /home/runner/TWRP/out/target/product/j3xlte/recovery.*

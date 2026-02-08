@@ -1,18 +1,3 @@
-# Copyright (C) 2022 NotNoelChannel
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 TARGET_OTA_ASSERT_DEVICE := j3xnlte,j3xnltexx,j2xlte,j2xltedd,j3xlte,j3xltexx
 
 # Bootloader
@@ -72,7 +57,7 @@ BOARD_CUSTOM_RECOVERY_KEYMAPPING := device/samsung/j3xlte/recovery/recovery_keys
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := device/samsung/j3xlte/recovery/recovery.fstab
 ################################################
-# display
+# Display
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 162
 RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
@@ -83,7 +68,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/20200000.usb/gadget/lun%d/file"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 ############################################
-# shrp
+# SHRP
 SHRP_EXPRESS              := true
 SHRP_LITE                 := true
 SHRP_MAINTAINER           := notnoelchannel
@@ -95,5 +80,5 @@ SHRP_REC                  := /dev/block/platform/sprd-sdhci.3/by-name/RECOVERY
 SHRP_CUSTOM_FLASHLIGHT    := true
 SHRP_FONP_1               := /sys/devices/virtual/camera/rear/rear_flash
 SHRP_FLASH_MAX_BRIGHTNESS := 1
-SHRP_DEVICE_CODE          := j3xnlte
+SHRP_DEVICE_CODE          := j3xlte
 
