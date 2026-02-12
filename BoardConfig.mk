@@ -1,4 +1,4 @@
-TARGET_OTA_ASSERT_DEVICE := j3xnlte,j3xnltexx,j2xlte,j2xltedd,j3xlte,j3xltexx
+TARGET_OTA_ASSERT_DEVICE := j3xnlte,j2xlte,j2xltedd,j3xlte
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := SC9830I
